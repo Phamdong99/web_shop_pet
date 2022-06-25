@@ -283,7 +283,7 @@
                                             <div class="size-207">
                                                 <div class="flex-w flex-sb-m p-b-17">
 													<span class="mtext-107 cl2 p-r-20">
-														{{ $reviews->reviewer->name }}
+														{{ $reviews->review->name }}
 													</span>
 
                                                     <span class="fs-18 cl11">

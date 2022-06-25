@@ -39,12 +39,10 @@ class ProductHomeController extends Controller
         return redirect()->back();
     }
     //view đánh giá
-    public function view_review(Product $product)
+    public function view_review()
     {
-        dd($product->reviews()->with('reviewer')->get());
        return view('products.content', [
-           'product'=>$product,
-           'reviews' => $product->reviews()->with('reviewer')->get()
+           'reviews' => Product::with('review')->get()
        ]);
     }
 }
