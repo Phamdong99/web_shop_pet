@@ -5,17 +5,11 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                @php $total = 0; @endphp
-                @foreach($carts as $key => $cart)
-                    @if($cart->active == 2)
-                        @php
-                        $total += $cart->total;
-                        @endphp
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>{{ count($carts) }}</h3>
+                            <h3>{{ $total_cart_of_month }}</h3>
 
                             <p>Tổng số đơn hàng</p>
                         </div>
@@ -30,7 +24,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>{{ number_format($total, 0, '', '.') }}<sup style="font-size: 20px"> VND</sup></h3>
+                            <h3>{{ number_format($total_of_month, 0, '', '.') }}<sup style="font-size: 20px"> VND</sup></h3>
 
                             <p>Danh số</p>
                         </div>
@@ -45,9 +39,9 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>{{ count($members) }}</h3>
 
-                            <p>User Registrations</p>
+                            <p>Tổng số thành viên</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
@@ -60,9 +54,9 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>{{ count($product) }}</h3>
 
-                            <p>Unique Visitors</p>
+                            <p>Số lượng sản phẩm đang bán</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
@@ -70,56 +64,71 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                    @endif
-                @endforeach
                 <!-- ./col -->
             </div>
             <!-- /.row -->
             <!-- Main row -->
             <div class="row">
-                <!-- Left col -->
-                <section class="col-lg-7 connectedSortable">
-                    <!-- Calendar -->
-                    <div class="card bg-gradient-success">
-                        <div class="card-header border-0">
+                <div style="width: 100%">
+                    <div class="text-center"><h3>Danh sách đơn hàng mới nhất</h3></div>
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Ngày đặt hàng</th>
+                            <th>Tổng tiền</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{-- {!! \App\Helpers\Product::product($products) !!}--}}
+                        @foreach ($carts as $key => $cart)
+                            @if(isset($cart->carts[0]))
+                                <tr>
+                                    <td>{{ $cart->carts[0]->id }}</td>
+                                    <td>{{ $cart->name }}</td>
+                                    <td>{{ $cart->phone }}</td>
+                                    <td>{{ $cart->email }}</td>
+                                    <td>{{ $cart->created_at  }}</td>
+                                    <td>{{ number_format($cart->carts[0]->total)  }} VND</td>
+                                </tr>
+                            @endif
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div style="width: 100%">
+                    <div class="text-center"><h4>Một số đánh giá mới nhất của khách hàng</h4></div>
+                    @if(count($reviews) != 0)
+                        <div class="carts">
+                            <table class="table">
+                                <tbody>
+                                <tr class="table_head">
+                                    <th class="column-0">Sản phẩm</th>
+                                    <th class="column-1">Tên người đánh giá</th>
+                                    <th class="column-2">Email</th>
+                                    <th class="column-3">Nội dung đánh giá</th>
+                                </tr>
 
-                            <h3 class="card-title">
-                                <i class="far fa-calendar-alt"></i>
-                                Calendar
-                            </h3>
-                            <!-- tools card -->
-                            <div class="card-tools">
-                                <!-- button with a dropdown -->
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
-                                        <i class="fas fa-bars"></i>
-                                    </button>
-                                    <div class="dropdown-menu" role="menu">
-                                        <a href="#" class="dropdown-item">Add new event</a>
-                                        <a href="#" class="dropdown-item">Clear events</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="#" class="dropdown-item">View calendar</a>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                            <!-- /. tools -->
+                                @foreach($reviews as $key => $review)
+                                    <tr>
+                                        <td class="column-0">{{ $review->product_id }}</td>
+                                        <td class="column-1">{{ $review->name }}</td>
+                                        <td class="column-2">{{ $review->email }}</td>
+                                        <td class="column-3">{{ $review->content }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- /.card-header -->
-                        <div class="card-body pt-0">
-                            <!--The calendar -->
-                            <div id="calendar" style="width: 100%"></div>
+                    @else
+                        <div class="text-center">
+                            <h3>Không có đánh giá nào cho sản phẩm</h3>
                         </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-                </section>
-                <!-- right col -->
+                    @endif
+                </div>
             </div>
             <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->

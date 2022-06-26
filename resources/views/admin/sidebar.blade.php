@@ -14,7 +14,7 @@
                     <img src="/template/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Phạm Văn Đồng</a>
+                    <a href="#" class="d-block">{{auth()->user()->name}}</a>
                 </div>
             </div>
 
@@ -148,6 +148,7 @@
                             </li>
                         </ul>
                     </li>
+                    @if(auth()->id() === 1)
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-user-cog"></i>
@@ -172,6 +173,7 @@
                             </li>
                         </ul>
                     </li>
+                    @endif
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon far fa-comment"></i>
