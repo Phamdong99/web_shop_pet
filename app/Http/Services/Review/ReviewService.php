@@ -43,10 +43,6 @@ class ReviewService
         return true;
 
     }
-//show review
-    public function show_review($id)
-    {
-        return Reviewer::get();
-    }
+
 
 }

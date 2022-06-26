@@ -17,4 +17,5 @@ class Review extends Model
         'review_star',
         'active'
     ];
+
 }
