@@ -17,14 +17,6 @@ class CartController extends Controller
         $this->cart = $cart;
     }
 
-
-    /*    public function index()
-        {
-            return view('admin.carts.customer', [
-                'title'=>'Danh sách đơn đặt hàng',
-                'carts'=>$this->cart->getCustomer()
-            ]);
-        }*/
     public function index()
     {
         return view('admin.carts.customer', [

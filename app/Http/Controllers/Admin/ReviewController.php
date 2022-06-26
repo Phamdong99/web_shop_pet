@@ -25,12 +25,26 @@ class ReviewController extends Controller
         ]);
     }
 
-        public function show(Product $product)
+    public function show(Product $product)
     {
         return view('admin.reviews.detail', [
             'title'=> 'Chi tiết đánh giá : ' . $product->name,
             'product'=> $product,
-            'reviews' => $product->reviews()->with('reviewer')->get()
+            'reviews' => $product->reviews()->get()
+        ]);
+    }
+    public function update(Request $request)
+    {
+        $result = $this->reviewService->updateActive($request);
+
+        if ($result) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Cập nhật đánh giá thành công'
+            ]);
+        }
+        return response()->json([
+            'error' => true
         ]);
     }
 }

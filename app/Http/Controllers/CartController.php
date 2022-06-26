@@ -15,6 +15,7 @@ class CartController extends Controller
     {
         $this->cartService = $cartService;
     }
+    //khách
     public function index(Request $request)
     {
         $result = $this->cartService->create($request);

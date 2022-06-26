@@ -10,10 +10,11 @@ class Review extends Model
     use HasFactory;
 
     protected $fillable = [
-        'reviewer_id',
         'product_id',
         'content',
         'name',
         'email',
+        'review_star',
+        'active'
     ];
 }

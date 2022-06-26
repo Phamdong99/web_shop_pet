@@ -65,8 +65,5 @@ class EmployeeService
         return false;
     }
 
-    public function getname()
-    {
-        return User::get();
-    }
+
 }

@@ -12,7 +12,6 @@
         </div>
 
         <div class="carts">
-{{--            @php $total = 0; @endphp--}}
             <table class="table">
                 <tbody>
                 <tr class="table_head">

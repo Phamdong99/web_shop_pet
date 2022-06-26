@@ -28,7 +28,7 @@ class ProductHomeController extends Controller
             'title' => $product->name,
             'product'=> $product,
             'products'=> $productMore,
-            'reviews' => $product->reviews,
+            'reviews' => $product->reviews()->get()
         ]);
     }
 //Đánh giá
@@ -38,11 +38,5 @@ class ProductHomeController extends Controller
 
         return redirect()->back();
     }
-    //view đánh giá
-    public function view_review()
-    {
-       return view('products.content', [
-           'reviews' => Product::with('review')->get()
-       ]);
-    }
+
 }

@@ -79,11 +79,4 @@ class EmployeeController extends Controller
             'error' => true
         ]);
     }
-
-    public function viewnameuser()
-    {
-        return view('admin/sidebar', [
-            'user'=>$this->employeeService->getname()
-        ]);
-    }
 }

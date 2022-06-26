@@ -17,6 +17,7 @@
         <tbody>
         {{-- {!! \App\Helpers\Product::product($products) !!}--}}
         @foreach ($carts as $key => $cart)
+            @if(isset($cart->carts[0]))
             <tr>
                 <td>{{ $cart->carts[0]->id  }}</td>
                 <td>{{ $cart->name }}</td>
@@ -42,6 +43,7 @@
                     </a>
                 </td>
             </tr>
+            @endif
         @endforeach
         </tbody>
     </table>

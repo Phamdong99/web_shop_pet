@@ -114,6 +114,7 @@ Route::middleware(['auth'])->group(function () {
             Route::prefix('reviews')->group(function () {
                 Route::get('list', [ReviewController::class, 'index']);
                 Route::get('view/{product}', [ReviewController::class, 'show']);
+                Route::post('update', [ReviewController::class, 'update'])->name('review.update');
             });
         });
     });

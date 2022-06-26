@@ -20,9 +20,15 @@
 
             @foreach($reviews as $key => $review)
                 <tr>
-                    <td class="column-1">{{ $review->reviewer->name }}</td>
-                    <td class="column-2">{{ $review->reviewer->email }}</td>
+                    <td class="column-1">{{ $review->name }}</td>
+                    <td class="column-2">{{ $review->email }}</td>
                     <td class="column-3">{{ $review->content }}</td>
+                    <td>
+                        <select name="active" id="active" data-cart="{{$review->id}}">
+                            <option value="0" {{$review->active == 0 ? 'selected' : ''}}>Đang hiển thị</option>
+                            <option value="1" {{$review->active == 1 ? 'selected' : ''}}>Đóng</option>
+                        </select>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
@@ -33,6 +39,35 @@
         <h3>Không có bình luận nào cho sản phẩm</h3>
     </div>
 @endif
+@endsection
+@section('footer')
+    <script>
+        $(document).ready(function () {
+            $("#active").on('change', function (e) {
+                let active = e.target.value;
+                let review_id = e.target.getAttribute("data-review");
+
+                // update active cart
+
+                $.ajax({
+                    type: 'POST',
+                    data: { active, review_id },
+                    url: '{{route('admin.review.update')}}',
+                    success: function (result)
+                    {
+                        if(result.error === false){
+                            alert(result.message);
+                            location.reload();
+                        }
+                        else
+                        {
+                            alert('Cập nhật đánh giá không thành công. Vui lòng thử lại');
+                        }
+                    }
+                })
+            })
+        })
+    </script>
 @endsection
 
 

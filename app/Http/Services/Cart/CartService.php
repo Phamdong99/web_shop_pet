@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Session;
 
 class CartService
 {
+    //insert phía khách hàng
     public function create($request)
     {
         $qty = (int)$request->input('num_product');
@@ -44,7 +45,7 @@ class CartService
         Session::put('carts', $carts);
         return true;
     }
-
+//lấy product trả về giao diện phía khách
     public function getProduct()
     {
         $carts = Session::get('carts');
@@ -149,12 +150,14 @@ class CartService
         ]);
     }
 
-    //admin
-    public function getCustomer()
+    public function getDetailsProduct($id)
     {
-        return Customer::get();
+        return Product::select('id', 'name', 'price', 'price_sale', 'thumb')
+            ->where(['id' => $id, 'active' => 1])
+            ->first();
     }
 
+    //admin
     public function destroy($request)
     {
         $id = (int)$request->input('id');
@@ -165,13 +168,6 @@ class CartService
         }
 
         return false;
-    }
-
-    public function getDetailsProduct($id)
-    {
-        return Product::select('id', 'name', 'price', 'price_sale', 'thumb')
-            ->where(['id' => $id, 'active' => 1])
-            ->first();
     }
 
     public function updateActive($request)
