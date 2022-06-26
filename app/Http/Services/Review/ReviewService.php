@@ -2,6 +2,7 @@
 
 namespace App\Http\Services\Review;
 
+use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Reviewer;
@@ -36,6 +37,18 @@ class ReviewService
         return true;
 
     }
+    //update active review
+    public function updateActive($request)
+    {
+        $active = (int)$request->input('active');
+        $review_id = (int)$request->input('review_id');
+        $review = Review::where('id', $review_id)->first();
 
+        if ($review) {
+            return Review::where('id', $review_id)->update(['active' => $active]);
+        }
+
+        return false;
+    }
 
 }

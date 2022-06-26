@@ -33,10 +33,11 @@ class ReviewController extends Controller
             'reviews' => $product->reviews()->get()
         ]);
     }
+
+    //update active review
     public function update(Request $request)
     {
         $result = $this->reviewService->updateActive($request);
-
         if ($result) {
             return response()->json([
                 'error' => false,

@@ -276,6 +276,7 @@
                                     <div class="p-b-30 m-lr-15-sm">
                                         <!-- Review -->
                                         @foreach($reviews as $review)
+                                            @if($review->active != 1)
                                         <div class="flex-w flex-t p-b-68">
                                             <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
                                                 <img src="{{asset('template/images/aus.png')}}" alt="AVATAR">
@@ -301,6 +302,7 @@
                                                 </p>
                                             </div>
                                         </div>
+                                            @endif
                                         @endforeach
                                         <!-- Add review -->
                                         <form class="w-full" method="post">

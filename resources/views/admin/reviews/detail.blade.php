@@ -12,6 +12,7 @@
         <table class="table">
             <tbody>
             <tr class="table_head">
+                <th class="column-0">#</th>
                 <th class="column-1">Tên người đánh giá</th>
                 <th class="column-2">Email</th>
                 <th class="column-3">Nội dung đánh giá</th>
@@ -20,11 +21,12 @@
 
             @foreach($reviews as $key => $review)
                 <tr>
+                    <td class="column-0">{{ $review->id }}</td>
                     <td class="column-1">{{ $review->name }}</td>
                     <td class="column-2">{{ $review->email }}</td>
                     <td class="column-3">{{ $review->content }}</td>
                     <td>
-                        <select name="active" id="active" data-cart="{{$review->id}}">
+                        <select name="active" class="active" data-review="{{$review->id}}">
                             <option value="0" {{$review->active == 0 ? 'selected' : ''}}>Đang hiển thị</option>
                             <option value="1" {{$review->active == 1 ? 'selected' : ''}}>Đóng</option>
                         </select>
@@ -36,18 +38,18 @@
     </div>
 @else
     <div class="text-center">
-        <h3>Không có bình luận nào cho sản phẩm</h3>
+        <h3>Không có đánh giá nào cho sản phẩm</h3>
     </div>
 @endif
 @endsection
 @section('footer')
     <script>
         $(document).ready(function () {
-            $("#active").on('change', function (e) {
+            $(".active").on('change', function (e) {
                 let active = e.target.value;
                 let review_id = e.target.getAttribute("data-review");
 
-                // update active cart
+                // update active review
 
                 $.ajax({
                     type: 'POST',

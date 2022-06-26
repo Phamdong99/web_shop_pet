@@ -26,7 +26,7 @@
                 <td>{{ $cart->created_at  }}</td>
                 <td>{{ number_format($cart->carts[0]->total)  }} VND</td>
                 <td>
-                    <select name="active" id="active" data-cart="{{$cart->carts[0]->id}}">
+                    <select name="active" class="active" data-cart="{{$cart->carts[0]->id}}">
                         <option value="0" {{$cart->carts[0]->active == 0 ? 'selected' : ''}}>Chưa thanh toán</option>
                         <option value="1" {{$cart->carts[0]->active == 1 ? 'selected' : ''}}>Đã chuyển cọc</option>
                         <option value="2" {{$cart->carts[0]->active == 2 ? 'selected' : ''}}>Đã thanh toán</option>
@@ -75,7 +75,7 @@
 
     <script>
         $(document).ready(function () {
-            $("#active").on('change', function (e) {
+            $(".active").on('change', function (e) {
                 let active = e.target.value;
                 let cart_id = e.target.getAttribute("data-cart");
 
