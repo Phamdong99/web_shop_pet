@@ -12,18 +12,20 @@
         </thead>
         <tbody>
         {{-- {!! \App\Helpers\Product::product($products) !!}--}}
-        @foreach ($products as $key => $product)
+        @foreach ($reviews as $key => $review)
+            @if(isset($review->reviews[0]))
             <tr>
-                <td>{{ $product->id  }}</td>
-                <td><img src="{{ $product->thumb }}" alt="" width="60px"></td>
-                <td>{{ $product->name }}</td>
+                <td>{{ $review->reviews[0]->id  }}</td>
+                <td><img src="{{ $review->thumb }}" alt="" width="60px"></td>
+                <td>{{ $review->name }}</td>
                 <td>
-                    <a class="btn btn-primary btn-sm" href="/admin/reviews/view/{{ $product->id }} ">
+                    <a class="btn btn-primary btn-sm" href="/admin/reviews/view/{{ $review->id }} ">
                         <i class="far fa-eye"></i>
                     </a>
 
                 </td>
             </tr>
+            @endif
         @endforeach
         </tbody>
     </table>

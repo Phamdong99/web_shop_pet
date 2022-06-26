@@ -10,13 +10,6 @@ use Illuminate\Support\Facades\Session;
 
 class ReviewService
 {
-    //Admin
-    public function getProduct()
-    {
-        return Product::where('type', 1)
-            ->get();
-    }
-
     //Khách hàng
     public function create_review($request)
     {

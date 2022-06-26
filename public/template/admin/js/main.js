@@ -3,7 +3,7 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-
+//Xoá danh mục
 function removeRow(id, url)
 {
     if(confirm('Bạn có chắc chắn muốn xóa danh mục này'))

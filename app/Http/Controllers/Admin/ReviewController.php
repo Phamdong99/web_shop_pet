@@ -21,7 +21,7 @@ class ReviewController extends Controller
     {
         return view('admin.reviews.product', [
             'title' => 'Danh sách sản phẩm được đánh giá',
-            'products' => $this->reviewService->getProduct()
+            'reviews' => Product::with('reviews')->get()
         ]);
     }
 

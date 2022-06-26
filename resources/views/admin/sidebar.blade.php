@@ -4,9 +4,8 @@
         <!-- Brand Logo -->
         <a href="/admin/admin" class="brand-link">
             <img src="/template/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminShop PET</span>
+            <span class="brand-text font-weight-light">PET SHOP</span>
         </a>
-
         <!-- Sidebar -->
         <div class="sidebar">
             <!-- Sidebar user (optional) -->

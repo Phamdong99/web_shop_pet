@@ -3,7 +3,7 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-
+//load sản phẩm
 function loadMore()
 {
    const page = $('#page').val();

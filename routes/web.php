@@ -84,7 +84,7 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('edit/{employee}', [EmployeeController::class, 'show']);
                 Route::post('edit/{employee}', [EmployeeController::class, 'update']);
                 Route::DELETE('destroy', [EmployeeController::class, 'destroy']);
-                Route::get('view_name_user', [EmployeeController::class, 'viewnameuser']);
+                Route::get('view_name_user/{employee}', [EmployeeController::class, 'view_user']);
             });
 
             #Information
