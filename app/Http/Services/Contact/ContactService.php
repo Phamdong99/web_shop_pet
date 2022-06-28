@@ -13,7 +13,7 @@ class ContactService
     }
     public function update($contact, $request)
     {
-        $contact->address = (string) $request->input('name');
+        $contact->address = (string) $request->input('address');
         $contact->phone = (string) $request->input('phone');
         $contact->email = (string) $request->input('email');
         $contact->facebook = (string) $request->input('facebook');

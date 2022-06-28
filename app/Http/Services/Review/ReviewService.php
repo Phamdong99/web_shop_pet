@@ -22,7 +22,8 @@ class ReviewService
                 'name' => (string)$request->input('name'),
                 'email' => (string)$request->input('email'),
                 'content' => (string)$request->input('content'),
-                'review_star' => (int)$request->input('review_star')
+                'review_star' => (int)$request->input('review_star'),
+                'active'=>(int)$request->input('0')
             ]);
 
             DB::commit();

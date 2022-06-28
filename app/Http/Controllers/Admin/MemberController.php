@@ -48,7 +48,7 @@ class MemberController extends Controller
     public function show_detail(Member $member)
     {
         return view('admin.member.show_detail', [
-            'title'=>'Sửa thành viên',
+            'title'=>'Thông tin thành viên',
             'member'=>$member
         ]);
     }

@@ -42,10 +42,10 @@
             </ul>
 
             <div class="w-full">
-                <div class="header-cart-total w-full p-tb-40">
+               {{-- <div class="header-cart-total w-full p-tb-40">
                     Tổng tiền : {{ number_format($sumPriceCart, 0, '', '.') }}
                 </div>
-
+--}}
                 <div class="header-cart-buttons flex-w w-full">
                     <a href="/carts" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
                         Xem giỏ hàng

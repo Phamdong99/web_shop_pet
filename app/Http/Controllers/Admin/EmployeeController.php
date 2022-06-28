@@ -48,14 +48,14 @@ class EmployeeController extends Controller
     public function show_detail(User $employee)
     {
         return view('admin/users/show_detail', [
-            'title'=>'Danh sách nhân viên',
+            'title'=>'Thông tin nhân viên',
             'employee'=>$employee
         ]);
     }
     public function show(User $employee)
     {
         return view('admin/users/edit', [
-            'title'=>'Danh sách nhân viên',
+            'title'=>'Sửa thông tin nhân viên',
             'employee'=>$employee
         ]);
     }
@@ -72,7 +72,7 @@ class EmployeeController extends Controller
         if($result){
             return response()->json([
                 'error' => false,
-                'message' => 'Xóa thành viên thành công'
+                'message' => 'Xóa nhân viên thành công'
             ]);
         }
         return response()->json([

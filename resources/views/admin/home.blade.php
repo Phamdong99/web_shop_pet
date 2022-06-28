@@ -4,7 +4,7 @@
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-            <div class="row">
+            <div class="row" style="margin-top: 10px">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <div class="small-box bg-info">
@@ -69,8 +69,8 @@
             <!-- /.row -->
             <!-- Main row -->
             <div class="row">
-                <div style="width: 100%">
-                    <div class="text-center"><h3>Danh sách đơn hàng mới nhất</h3></div>
+                <div style="width: 98%" class="text-center">
+                    <div ><h3>Danh sách đơn hàng mới nhất</h3></div>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
@@ -99,7 +99,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div style="width: 100%">
+                <div style="width: 98% ">
                     <div class="text-center"><h4>Một số đánh giá mới nhất của khách hàng</h4></div>
                     @if(count($reviews) != 0)
                         <div class="carts">

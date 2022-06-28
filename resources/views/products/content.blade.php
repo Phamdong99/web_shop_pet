@@ -33,7 +33,7 @@
 
                                         </div>
                                     </li>
-                                    <li role="presentation">
+                                  {{--  <li role="presentation">
                                         <img src="template/images/product-detail-02.jpg">
                                         <div class="slick3-dot-overlay">
 
@@ -44,7 +44,7 @@
                                         <div class="slick3-dot-overlay">
 
                                         </div>
-                                    </li>
+                                    </li>--}}
                                 </ul>
                             </div>
                             <div class="wrap-slick3-arrows flex-sb-m flex-w"><button class="arrow-slick3 prev-slick3 slick-arrow" style=""><i class="fa fa-angle-left" aria-hidden="true"></i></button><button class="arrow-slick3 next-slick3 slick-arrow" style=""><i class="fa fa-angle-right" aria-hidden="true"></i></button></div>
