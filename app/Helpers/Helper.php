@@ -95,8 +95,9 @@ class Helper
     public static function price($price = 0, $pricesale = 0)
     {
 
-        if($pricesale != 0 ) return number_format($pricesale);
-        if($price != 0 ) return number_format($price);
+        if($pricesale != 0 ) return '<strike style="color: red">' . number_format($price) .' VND</strike>'
+            . '<br />' .number_format($pricesale) . 'VND';
+        if($price != 0 ) return number_format($price) . 'VND';
         return '<a href="/contact_show">Liên hệ</a>';
     }
 }
