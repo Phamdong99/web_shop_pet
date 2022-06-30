@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Http\Requests\Cart;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class CreateFormRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, mixed>
+     */
+    public function rules()
+    {
+        return [
+            'name' => 'required',
+            'phone' => 'required',
+            'address'=>'required',
+            'email' => 'required'
+
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Vui lòng nhập tên sản phẩm !',
+            'phone.required' => 'Vui lòng nhập số điện thoại !',
+            'address.required' => 'vui lòng nhập địa chỉ nhận hàng !',
+            'email.required' => 'vui lòng nhập email !'
+
+        ];
+    }
+}

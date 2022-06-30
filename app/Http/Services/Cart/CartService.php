@@ -102,19 +102,19 @@ class CartService
                 'content' => $request->input('content')
             ]);
 
-            $this->infoProductCart($carts, $customer->id);
+            $cart_insert = $this->infoProductCart($carts, $customer->id);
             DB::commit();
-            Session::flash('success', 'Đặt hàng thành công');
 
             #queue
             SenMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
 
             Session::forget('carts');
-
+            return $cart_insert;
         } catch (\Exception $err) {
             DB::rollBack();
-            Session::flash('error', 'Đặt hàng không thành công, vui lòng thử lại');
+
         }
+        return false;
     }
 
     public function infoProductCart($carts, $customer_id)
@@ -148,6 +148,8 @@ class CartService
         $cart->update([
             'total' => $total
         ]);
+
+        return $cart;
     }
 
     public function getDetailsProduct($id)

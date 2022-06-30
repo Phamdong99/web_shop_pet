@@ -140,25 +140,14 @@
                                 </div>
                             </div>
 
-                            <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-                                Đặt Hàng
+                            <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" name="redirect">
+                                Thanh Toán VNPay
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
     </form>
-    @else
-        <div class="text-center">
-            <h2>Giỏ hàng trống</h2>
-            <br>
-        <a class="btn btn-secondary" href="/">
-            Quay Lại Trang Chủ
-        </a>
-            <a class="btn btn-secondary" href="/history_cart">
-                Đi tới lịch sử đặt hàng
-            </a>
-        </div>
     @endif
 @endsection
 
