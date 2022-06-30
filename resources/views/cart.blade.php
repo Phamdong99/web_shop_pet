@@ -15,8 +15,8 @@
         <div class="header-cart-content flex-w js-pscroll">
             @php $sumPriceCart = 0; @endphp
             <ul class="header-cart-wrapitem w-full">
-                @if(isset($products) && count($products) > 0)
-                    @foreach($products as $key => $product)
+                @if(isset($products) && count(json_decode($products)) > 0)
+                    @foreach(json_decode($products) as $key => $product)
                         @php
                             $price =  \App\Helpers\Helper::price($product->price, $product->price_sale);
                             $sumPriceCart += $product->price_sale !== 0 ? $product->price_sale : $product->price;

@@ -3,7 +3,7 @@
     <script src="/ckeditor/ckeditor.js"></script>
 @endsection
 @section('content')
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <div class="card-body">
             <div class="form-group">
                 <label for="menu">Tên sản phẩm</label>
@@ -42,12 +42,8 @@
             </div>
 
             <div class="form-group">
-                <label for="menu">Ảnh 1</label>
-                <input type="file" class="form-control"  id="upload" value="{{old('thumb')}}">
-                <div id="image_show">
-
-                </div>
-                <input type="hidden" name="file" id="file">
+                <label for="menu">Ảnh</label>
+                <input type="file" class="form-control"  id="upload" name="file[]" multiple>
             </div>
 
             <div class="form-group">
