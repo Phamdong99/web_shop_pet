@@ -40,9 +40,16 @@ class SliderService
     public function update($request, $slider)
     {
         try{
+
+            $patch_file = $request->input('file');
+
+            if (empty($patch_file)){
+                $patch_file = $slider->thumb;
+            }
+
             $slider->name = (string) $request->input('name');
             $slider->url = (string) $request->input('url');
-            $slider->thumb = (string) $request->input('file');
+            $slider->thumb = $patch_file;
             $slider->sort_by = (int) $request->input('sort_by');
             $slider->active = (int) $request->input('active');
             $slider->save();

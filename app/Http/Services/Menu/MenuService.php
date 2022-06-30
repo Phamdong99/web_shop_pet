@@ -54,9 +54,17 @@ class MenuService
         if($request->input('parent_id')!=$menu->id){
             $menu->parent_id = (int) $request->input('parent_id');
         }
+
+        $patch_file = $request->input('file');
+
+        if (empty($patch_file)){
+            $patch_file = $menu->thumb;
+        }
+
+
         $menu->name = (string) $request->input('name');
         $menu->description = (string) $request->input('description');
-        $menu->thumb = (string) $request->input('file');
+        $menu->thumb = $patch_file;
         $menu->content = (string) $request->input('content');
         $menu->active = (string) $request->input('active');
         $menu->save();
@@ -81,14 +89,26 @@ class MenuService
     }
     public function getProduct($menu, $request)
     {
-     $query = $menu->products()
-         ->select('id','name','price','price_sale','thumb')
-         ->where('active', 1);
+        $products = [];
+
+        $menu_children = $menu->menus;
+
+
+        if (!empty($menu_children)){
+            foreach ($menu_children as $menu_child) {
+                $products[] = $menu_child->products->all();
+            }
+        }
+        // get products menu parent
+
+        $products[] = $menu->products->all();
+
      if($request->input('price'))
      {
-         $query->orderBy('price', $request->input('price'));
+         collect($products)->sortByDesc('price', $request->input('price'));
      }
-         return $query->orderByDesc('id')
-         ->paginate(12);
+        $result = call_user_func_array('array_merge', $products);
+
+        return array_values($result);
     }
 }

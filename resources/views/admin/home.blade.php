@@ -80,6 +80,7 @@
                             <th>Email</th>
                             <th>Ngày đặt hàng</th>
                             <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -93,6 +94,7 @@
                                     <td>{{ $cart->email }}</td>
                                     <td>{{ $cart->created_at  }}</td>
                                     <td>{{ number_format($cart->carts[0]->total)  }} VND</td>
+                                    <td>{!! \App\Helpers\Helper::active1($cart->carts[0]->active) !!}</td>
                                 </tr>
                             @endif
                         @endforeach
@@ -102,7 +104,7 @@
                 <div style="width: 98% ">
                     <div class="text-center"><h4>Một số đánh giá mới nhất của khách hàng</h4></div>
                     @if(count($reviews) != 0)
-                        <div class="carts">
+                        <div class="carts table table-bordered table-striped">
                             <table class="table">
                                 <tbody>
                                 <tr class="table_head">
@@ -110,14 +112,16 @@
                                     <th class="column-1">Tên người đánh giá</th>
                                     <th class="column-2">Email</th>
                                     <th class="column-3">Nội dung đánh giá</th>
+                                    <th class="column-4">Trạng thái</th>
                                 </tr>
 
                                 @foreach($reviews as $key => $review)
                                     <tr>
-                                        <td class="column-0">{{ $review->product_id }}</td>
+                                        <td class="column-0">{{ $review->product->name }}</td>
                                         <td class="column-1">{{ $review->name }}</td>
                                         <td class="column-2">{{ $review->email }}</td>
                                         <td class="column-3">{{ $review->content }}</td>
+                                        <td class="column-3">{!! \App\Helpers\Helper::active2($review->active) !!}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

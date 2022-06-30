@@ -76,8 +76,6 @@
                 </div>
             </div>
                 @include('products.list')
-
-            {!! $products->links() !!}
         </div>
     </div>
 @endsection

@@ -52,11 +52,13 @@ class SliderController extends Controller
     }
     public function update(Slider $slider, Request $request)
     {
-        $this->validate($request, [
+ /*       $this->validate($request, [
            'name' => 'required',
             'url' => 'required',
             'file' => 'required'
-        ]);
+
+        ]);*/
+
         $result = $this->slider->update($request, $slider);
         if($result){
             return Redirect('admin/sliders/list');

@@ -78,11 +78,17 @@ class ProductService
         if($request->input('menu_id')!=$product->id){
             $product->menu_id = (int) $request->input('menu_id');
         }
+        $patch_file = $request->input('file');
+
+        if (empty($patch_file)){
+            $patch_file = $product->thumb;
+        }
+
         $product->name = (string) $request->input('name');
         $product->description = (string) $request->input('description');
         $product->content = (string) $request->input('content');
         $product->active = (string) $request->input('active');
-        $product->thumb = (string) $request->input('file');
+        $product->thumb = $patch_file;
         $product->price = (int) $request->input('price');
         $product->price_sale = (int) $request->input('price_sale');
         $product->save();

@@ -51,10 +51,19 @@ class Helper
 
     public static function active($active = 0)
     {
-        return $active == 0 ? '<span class="btn btn-danger btn-xs">NO</span>'
-            : '<span class="btn btn-success btn-xs">YES</span>';
+        return $active == 0 ? '<span class="btn btn-danger btn-xs">Không hoạt động</span>'
+            : '<span class="btn btn-success btn-xs">Hoạt động</span>';
     }
-
+    public static function active1($active = 0)
+    {
+        return $active == 0 ? '<span class="btn btn-danger btn-xs">Chưa thanh toán</span>'
+            : '<span class="btn btn-success btn-xs">Đã thanh toán</span>';
+    }
+    public static function active2($active = 0)
+    {
+        return $active != 0 ? '<span class="btn btn-danger btn-xs">Đóng</span>'
+            : '<span class="btn btn-success btn-xs">Đang hiển thị</span>';
+    }
 
     public static function menus($menus, $parent_id = 0):string
     {

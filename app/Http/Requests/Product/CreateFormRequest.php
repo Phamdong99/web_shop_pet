@@ -25,10 +25,16 @@ class CreateFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'name' => 'required',
             'file' => 'required'
         ];
+
+        if (in_array($this->method(), ['PUT', 'PATCH'])) {
+            $rules['file'] = 'nullable';
+        }
+
+        return $rules;
     }
     public function messages()
     {

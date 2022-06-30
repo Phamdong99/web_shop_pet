@@ -18,10 +18,10 @@ class MainController extends Controller
             'title'=>'Trang quản trị Admin',
             'carts' => Customer::with('carts')->latest()->paginate(10),
             'total_cart_of_month' => Cart::whereMonth('created_at', date('m'))->count(),
-            'total_of_month' => collect($cart_month)->sum('total'),
+            'total_of_month' => collect($cart_month)->where('active', 2)->sum('total'),
             'members'=>Member::get(),
             'product'=>Product::where('active', 1)->get(),
-            'reviews'=>Review::where('active',0)->latest()->paginate(10)
+            'reviews'=>Review::with('product')->where('active',0)->latest()->paginate(10)
 
         ]);
     }

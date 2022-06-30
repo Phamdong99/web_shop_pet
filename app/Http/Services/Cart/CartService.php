@@ -162,9 +162,10 @@ class CartService
     {
         $id = (int)$request->input('id');
         $customer = Customer::where('id', $id)->first();
-
         if ($customer) {
-            return Customer::where('id', $id)->delete();
+            $customer->carts[0]->cart_details()->delete();
+            $customer->carts()->delete();
+            return $customer->delete();
         }
 
         return false;

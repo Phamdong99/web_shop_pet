@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <form action="" method="post">
+        @method('patch')
         <div class="card-body">
             <div class="form-group">
                 <label for="menu">Tên sản phẩm</label>

@@ -28,7 +28,7 @@
                 <td>
                     <select name="active" class="active" data-cart="{{$cart->carts[0]->id}}">
                         <option value="0" {{$cart->carts[0]->active == 0 ? 'selected' : ''}}>Chưa thanh toán</option>
-                        <option value="1" {{$cart->carts[0]->active == 1 ? 'selected' : ''}}>Đã chuyển cọc</option>
+                     {{--   <option value="1" {{$cart->carts[0]->active == 1 ? 'selected' : ''}}>Đã chuyển cọc</option>--}}
                         <option value="2" {{$cart->carts[0]->active == 2 ? 'selected' : ''}}>Đã thanh toán</option>
                     </select>
                 </td>
@@ -38,7 +38,7 @@
                     </a>
 
                     <a href="#" class="btn btn-danger btn-sm"
-                       onclick="removeRow({{ $cart->carts[0]->id }}, '/admin/carts/destroy')">
+                       onclick="removeRow({{ $cart->id }}, '/admin/carts/destroy')">
                         <i class="fas fa-trash"></i>
                     </a>
                 </td>

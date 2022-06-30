@@ -50,7 +50,7 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('list', [ProductController::class, 'index']);
                 Route::get('product_detail/{product}', [ProductController::class, 'show_detail']);
                 Route::get('edit/{product}', [ProductController::class, 'show']);
-                Route::post('edit/{product}', [ProductController::class, 'update']);
+                Route::patch('edit/{product}', [ProductController::class, 'update']);
                 Route::DELETE('destroy', [ProductController::class, 'destroy']);
 
             });
