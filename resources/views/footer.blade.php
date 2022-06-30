@@ -1,4 +1,3 @@
-
 <!-- Footer -->
 <footer class="bg3 p-t-75 p-b-32">
     <div class="container">
@@ -8,11 +7,13 @@
                     Danh Mục
                 </h4>
                 <ul>
-                    <li>Chó</li>
-                    <li>Mèo</li>
-                    <li>Thú cưng khác</li>
-                    <li>Phụ kiện</li>
-                    <li>Dịch vụ</li>
+                    @foreach($menu_parent as $menu)
+                        <li>
+                            <a href="/danh-muc/{{$menu->id}}-{{Str::slug($menu->name, '-')}}.html">
+                                {{$menu->name}}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
 
@@ -22,10 +23,10 @@
                 </h4>
 
                 <p class="stext-107 cl7 size-201">
-                    <ul>
+                <ul>
                     <li>Địa Chỉ : Số 10-Trường Chinh-Đống Đa-Hà Nội</li>
-                    <li>Số ĐT   : 0971.123.759</li>
-                    <li>Email   : dong16021999@gmail.com</li>
+                    <li>Số ĐT : 0971.123.759</li>
+                    <li>Email : dong16021999@gmail.com</li>
 
                 </ul>
                 </p>
@@ -46,7 +47,10 @@
             </div>
 
             <div class="map" style="margin-left: 150px">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.75120269168!2d105.8211693141788!3d21.002607986012535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac869f01d955%3A0x326f32c5df181885!2zMTAgxJAuIFRyxrDhu51uZyBDaGluaCwgS2jGsMahbmcgVGjGsOG7o25nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1656359414277!5m2!1svi!2s" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.75120269168!2d105.8211693141788!3d21.002607986012535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac869f01d955%3A0x326f32c5df181885!2zMTAgxJAuIFRyxrDhu51uZyBDaGluaCwgS2jGsMahbmcgVGjGsOG7o25nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1656359414277!5m2!1svi!2s"
+                    width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
@@ -82,7 +86,8 @@
                                     <div class="wrap-pic-w pos-relative">
                                         <img src="template/images/product-detail-01.jpg" alt="IMG-PRODUCT">
 
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
+                                           href="images/product-detail-01.jpg">
                                             <i class="fa fa-expand"></i>
                                         </a>
                                     </div>
@@ -92,7 +97,8 @@
                                     <div class="wrap-pic-w pos-relative">
                                         <img src="template/images/product-detail-02.jpg" alt="IMG-PRODUCT">
 
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
+                                           href="images/product-detail-02.jpg">
                                             <i class="fa fa-expand"></i>
                                         </a>
                                     </div>
@@ -102,7 +108,8 @@
                                     <div class="wrap-pic-w pos-relative">
                                         <img src="template/images/product-detail-03.jpg" alt="IMG-PRODUCT">
 
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
+                                           href="images/product-detail-03.jpg">
                                             <i class="fa fa-expand"></i>
                                         </a>
                                     </div>
@@ -123,7 +130,8 @@
 							</span>
 
                         <p class="stext-102 cl3 p-t-23">
-                            Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+                            Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare
+                            feugiat.
                         </p>
 
                         <!--  -->
@@ -173,14 +181,16 @@
                                             <i class="fs-16 zmdi zmdi-minus"></i>
                                         </div>
 
-                                        <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
+                                        <input class="mtext-104 cl3 txt-center num-product" type="number"
+                                               name="num-product" value="1">
 
                                         <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
                                             <i class="fs-16 zmdi zmdi-plus"></i>
                                         </div>
                                     </div>
 
-                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                                    <button
+                                        class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
                                         Add to cart
                                     </button>
                                 </div>
@@ -190,20 +200,25 @@
                         <!--  -->
                         <div class="flex-w flex-m p-l-100 p-t-40 respon7">
                             <div class="flex-m bor9 p-r-10 m-r-11">
-                                <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
+                                <a href="#"
+                                   class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100"
+                                   data-tooltip="Add to Wishlist">
                                     <i class="zmdi zmdi-favorite"></i>
                                 </a>
                             </div>
 
-                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                               data-tooltip="Facebook">
                                 <i class="fa fa-facebook"></i>
                             </a>
 
-                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                               data-tooltip="Twitter">
                                 <i class="fa fa-twitter"></i>
                             </a>
 
-                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                               data-tooltip="Google Plus">
                                 <i class="fa fa-google-plus"></i>
                             </a>
                         </div>
@@ -224,7 +239,7 @@
 <!--===============================================================================================-->
 <script src="{{asset("template/vendor/select2/select2.min.js")}}"></script>
 <script>
-    $(".js-select2").each(function(){
+    $(".js-select2").each(function () {
         $(this).select2({
             minimumResultsForSearch: 20,
             dropdownParent: $(this).next('.dropDownSelect2')
@@ -245,12 +260,12 @@
 <!--===============================================================================================-->
 <script src="{{asset("template/vendor/MagnificPopup/jquery.magnific-popup.min.js")}}"></script>
 <script>
-    $('.gallery-lb').each(function() { // the containers for all your galleries
+    $('.gallery-lb').each(function () { // the containers for all your galleries
         $(this).magnificPopup({
             delegate: 'a', // the selector for gallery item
             type: 'image',
             gallery: {
-                enabled:true
+                enabled: true
             },
             mainClass: 'mfp-fade'
         });
@@ -261,13 +276,13 @@
 <!--===============================================================================================-->
 <script src="{{asset("template/vendor/sweetalert/sweetalert.min.js")}}"></script>
 <script>
-    $('.js-addwish-b2').on('click', function(e){
+    $('.js-addwish-b2').on('click', function (e) {
         e.preventDefault();
     });
 
-    $('.js-addwish-b2').each(function(){
+    $('.js-addwish-b2').each(function () {
         var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-        $(this).on('click', function(){
+        $(this).on('click', function () {
             swal(nameProduct, "is added to wishlist !", "success");
 
             $(this).addClass('js-addedwish-b2');
@@ -275,10 +290,10 @@
         });
     });
 
-    $('.js-addwish-detail').each(function(){
+    $('.js-addwish-detail').each(function () {
         var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
 
-        $(this).on('click', function(){
+        $(this).on('click', function () {
             swal(nameProduct, "is added to wishlist !", "success");
 
             $(this).addClass('js-addedwish-detail');
@@ -288,9 +303,9 @@
 
     /*---------------------------------------------*/
 
-    $('.js-addcart-detail').each(function(){
+    $('.js-addcart-detail').each(function () {
         var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-        $(this).on('click', function(){
+        $(this).on('click', function () {
             swal(nameProduct, "is added to cart !", "success");
         });
     });
@@ -299,16 +314,16 @@
 <!--===============================================================================================-->
 <script src="{{asset("template/vendor/perfect-scrollbar/perfect-scrollbar.min.js")}}"></script>
 <script>
-    $('.js-pscroll').each(function(){
-        $(this).css('position','relative');
-        $(this).css('overflow','hidden');
+    $('.js-pscroll').each(function () {
+        $(this).css('position', 'relative');
+        $(this).css('overflow', 'hidden');
         var ps = new PerfectScrollbar(this, {
             wheelSpeed: 1,
             scrollingThreshold: 1000,
             wheelPropagation: false,
         });
 
-        $(window).on('resize', function(){
+        $(window).on('resize', function () {
             ps.update();
         })
     });

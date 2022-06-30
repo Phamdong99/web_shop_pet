@@ -155,9 +155,9 @@
         <a class="btn btn-secondary" href="/">
             Quay Lại Trang Chủ
         </a>
-           {{-- <a class="btn btn-secondary" href="/history_cart">
+            <a class="btn btn-secondary" href="/history_cart">
                 Đi tới lịch sử đặt hàng
-            </a>--}}
+            </a>
         </div>
     @endif
 @endsection

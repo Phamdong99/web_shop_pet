@@ -23,7 +23,7 @@ class MenuService
 
     public function getAll()
     {
-        return Menu::orderbyDesc('id')->paginate(50);
+        return Menu::orderbyDesc('id')->paginate(30);
     }
     public function create($request)
     {

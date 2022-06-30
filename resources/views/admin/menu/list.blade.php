@@ -22,5 +22,6 @@
             {!! \App\Helpers\Helper::menu($menus) !!}
       </tbody>
   </table>
+    {!! $menus->links() !!}
 @endsection
 

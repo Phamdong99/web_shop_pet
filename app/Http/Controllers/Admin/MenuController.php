@@ -34,6 +34,7 @@ class MenuController extends Controller
     }
     public function index()
     {
+
         return view('admin.menu.list', [
             'title' => 'Danh sách danh mục',
             'menus' => $this->menuService->getAll()

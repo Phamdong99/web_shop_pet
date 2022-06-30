@@ -55,12 +55,11 @@ class CartController extends Controller
         return redirect()->back();
     }
 
-    public function view_history(Customer $customer)
+    public function view_history()
     {
         return view('carts.history_cart', [
-            'title'=>'Lịch sử đặt hàng'. $customer->name,
-                'customer'=> $customer,
-                'carts' => $customer->carts()->with('product')->get()
+            'title'=>'Lịch sử đặt hàng',
+
         ]);
     }
 }

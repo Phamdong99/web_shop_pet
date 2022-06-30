@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Sửa danh mục</button>
+                <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
             </div>
         @csrf
     </form>

@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-                @include('products.list')
+                @include('products.service')
         </div>
     </div>
 @endsection
