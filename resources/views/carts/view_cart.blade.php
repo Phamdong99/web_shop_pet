@@ -49,19 +49,15 @@
                     </label>
                 </div>
                 <div class="form-group">
-                    <label >Mã đơn hàng:</label>
-
-                    <label><?php echo $_GET['vnp_TxnRef'] ?></label>
+                    <label >Mã đơn hàng: <?php echo $_GET['vnp_TxnRef'] ?></label>
                 </div>
                 <div class="form-group">
-
-                    <label >Số tiền:</label>
-                    <label><?php echo $_GET['vnp_Amount'] ?></label>
+                    <label >Số tiền đã thanh toán: <?php echo $_GET['vnp_Amount'] ?></label>
                 </div>
-                <div class="form-group">
+               {{-- <div class="form-group">
                     <label >Thời gian thanh toán:</label>
                     <label><?php echo $_GET['vnp_PayDate'] ?></label>
-                </div>
+                </div>--}}
             </table>
         </div>
         <br>
