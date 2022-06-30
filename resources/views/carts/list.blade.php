@@ -148,6 +148,14 @@
                 </div>
             </div>
     </form>
+    @else
+        <div class="text-center">
+            <h2>Giỏ hàng trống</h2>
+            <br>
+        <a class="btn btn-secondary" href="/">
+            Quay Lại Trang Chủ
+        </a>
+        </div>
     @endif
 @endsection
 

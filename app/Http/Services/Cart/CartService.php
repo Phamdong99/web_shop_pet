@@ -104,17 +104,17 @@ class CartService
 
             $cart_insert = $this->infoProductCart($carts, $customer->id);
             DB::commit();
-
             #queue
             SenMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
+
 
             Session::forget('carts');
             return $cart_insert;
         } catch (\Exception $err) {
             DB::rollBack();
-
         }
         return false;
+
     }
 
     public function infoProductCart($carts, $customer_id)
