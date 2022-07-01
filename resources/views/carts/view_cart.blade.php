@@ -1,7 +1,6 @@
 @extends('main')
 
 @section('content')
-    @include('admin.alert')
     @php
         $vnp_HashSecret = "LIXUQDQXRJUVVCGEOHJDZBHTSQFYXVUV";
                 $vnp_SecureHash = $_GET['vnp_SecureHash'];
@@ -28,7 +27,6 @@
                 $secureHash = hash_hmac('sha512', $hashData, $vnp_HashSecret);
 
     @endphp
-
     <div class="text-center p-t-150">
         <div class="container">
             <table class="table-responsive">
@@ -39,7 +37,7 @@
                         if ($secureHash == $vnp_SecureHash) {
                             if ($_GET['vnp_ResponseCode'] == '00') {
                                 echo "<span style='color:blue'>Thanh toán thành công. Cảm ơn quý khách đã sử dụng dịch vụ</span>";
-                                Session::flush();
+
                             } else {
                                 echo "<span style='color:red'>Thanh toán không thành công</span>";
                             }

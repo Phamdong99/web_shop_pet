@@ -14,6 +14,7 @@
             <th>Tên</th>
             <th>Email</th>
             <th>Địa chỉ</th>
+            <td>Chức danh</td>
             <th>Cập nhật</th>
             <th style="width: 150px">Thực hiện</th>
         </tr>
@@ -25,6 +26,7 @@
                 <td>{{ $employee->name }}</td>
                 <td>{{ $employee->email }}</td>
                 <td>{{ $employee->address }}</td>
+                <td>{{ $employee->cd }}</td>
                 <td>{{ $employee->updated_at  }}</td>
                 <td>
                     <a class="btn btn-primary btn-sm" href="/admin/employees/employee_detail/{{ $employee->id }} ">

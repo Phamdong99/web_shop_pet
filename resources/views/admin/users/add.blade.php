@@ -26,6 +26,10 @@
             </div>
 
             <div class="form-group">
+                <label for="menu">Chức danh</label>
+                <input type="text" class="form-control" name="cd" value="{{old('cd')}}" placeholder="">
+            </div>
+            <div class="form-group">
                 <label for="menu"> Số điện thoại </label>
                 <input type="text" class="form-control" name="phone" value="{{old('phone')}}" placeholder="">
             </div>

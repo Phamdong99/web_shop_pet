@@ -31,10 +31,9 @@
                                                    class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                                     {{$product->name}}
                                                 </a>
-
                                                 <span class="stext-105 cl3">
-									{!!\App\Helpers\Helper::price($product->price, $product->price_sale)!!}
-								</span>
+									            {!!\App\Helpers\Helper::price($product->price, $product->price_sale)!!}
+								                </span>
                                             </div>
 
                                         </div>
@@ -42,16 +41,15 @@
                                 </div>
                             @endif
                         @endforeach
-
                     </div>
                 </div>
                 <!-- Load more -->
-                <div class="flex-c-m flex-w w-full p-t-45" id="button-loadMore">
+                {{--<div class="flex-c-m flex-w w-full p-t-45" id="button-loadMore">
                     <input type="hidden" value="1" id="page">
                     <a onclick="loadMore()" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
                         Load More
                     </a>
-                </div>
+                </div>--}}
             </div>
         </section>
     </div>

@@ -117,23 +117,23 @@
                                         <br>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Tên khách Hàng">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" value="{{old('name')}}" placeholder="Tên khách Hàng">
                                         </div>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" placeholder="Số Điện Thoại">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" value="{{old('phone')}}" placeholder="Số Điện Thoại">
                                         </div>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" placeholder="Địa Chỉ Giao Hàng">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" value="{{old('address')}}" placeholder="Địa Chỉ Giao Hàng">
                                         </div>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="email" placeholder="Email Liên Hệ">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="email" value="{{old('email')}}" placeholder="Email Liên Hệ">
                                         </div>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <textarea class="cl8 plh3 size-111 p-lr-15" name="content"></textarea>
+                                            <textarea class="cl8 plh3 size-111 p-lr-15" name="content">{{old('content')}}</textarea>
                                         </div>
 
                                     </div>

@@ -25,3 +25,27 @@ function loadMore()
    })
 
 }
+
+$(document).ready(function () {
+
+    $("#num-product").on('change', function (e) {
+        var max = $("#num-product").attr('data-product-max');
+        var input_product = $("#num-product").val();
+        console.log(input_product, 'input')
+        console.log(max, 'max')
+        if (input_product > max){
+            alert('Vuot qua ton kho');
+            $(".num-product").val(max);
+        }
+    })
+
+    $(".btn-num-product-up").on('click', function (e){
+        var max = $("#num-product").attr('data-product-max');
+        var input_product = $("#num-product").val();
+        if (input_product > max){
+            alert('Vuot qua ton kho');
+            $(".num-product").val(max);
+        }
+    })
+})
+

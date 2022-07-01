@@ -42,8 +42,17 @@
             </div>
 
             <div class="form-group">
+                <label for="menu">Tổng số lượng</label>
+                <input type="number" class="form-control" name="name" value="1" placeholder="Nhập số lượng">
+            </div>
+
+            <div class="form-group">
                 <label for="menu">Ảnh</label>
-                <input type="file" class="form-control"  id="upload" name="file[]" multiple>
+                <input type="file" class="form-control"  id="upload" >
+                <div id="image_show">
+
+                </div>
+                <input type="hidden" name="file" id="file">
             </div>
 
             <div class="form-group">

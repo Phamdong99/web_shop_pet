@@ -88,30 +88,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-image"></i>
-                            <p>
-                                Slider
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
 
-                            <li class="nav-item">
-                                <a href="/admin/sliders/add" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm slider</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/admin/sliders/list" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Danh sách slider</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-cart-plus"></i>
@@ -153,6 +130,23 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-comment"></i>
+                            <p>
+                                Đánh Giá
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/reviews/list" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Danh sách đánh giá</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     @if(auth()->id() === 1)
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -178,24 +172,29 @@
                             </li>
                         </ul>
                     </li>
-                    @endif
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon far fa-comment"></i>
-                            <p>
-                                Đánh Giá
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/admin/reviews/list" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Danh sách đánh giá</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-image"></i>
+                                <p>
+                                    Slider
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/admin/sliders/add" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm slider</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin/sliders/list" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách slider</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-info"></i>
@@ -230,6 +229,7 @@
                             </li>
                         </ul>
                     </li>
+                    @endif
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

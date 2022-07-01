@@ -20,6 +20,7 @@
 <script src="/template/admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="/template/admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/template/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Page specific script -->
 @yield('footer')
 

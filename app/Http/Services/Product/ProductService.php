@@ -45,10 +45,11 @@ class ProductService
         if ($search = request()->search) {
             return Product::with('menu')
                 ->orderbyDesc('id')
+                ->latest()
                 ->where('name', 'like', '%' . $search . '%')->get();
         } else {
             return Product::with('menu')
-                ->orderbyDesc('id')->get();
+                ->orderbyDesc('id')->latest()->get();
         }
     }
 
@@ -66,7 +67,8 @@ class ProductService
                 'menu_id' => (int)$request->input('menu_id'),
                 'price' => (int)$request->input('price'),
                 'price_sale' => (int)$request->input('price_sale'),
-                'thumb' => json_encode($this->fileUpload($request)),
+                'qty_product'=>(int)$request->input('qty_product'),
+                'thumb' => (string)$request->input('file'),
                 'type' => (string)$request->input('type'),
                 'active' => (string)$request->input('active')
 
@@ -101,6 +103,7 @@ class ProductService
         $product->thumb = $patch_file;
         $product->price = (int)$request->input('price');
         $product->price_sale = (int)$request->input('price_sale');
+        $product->qty_product = (int)$request->input('qty_product');
         $product->save();
 
         Session::flash('success', 'Sửa danh mục thành công');

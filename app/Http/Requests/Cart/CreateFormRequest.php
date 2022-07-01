@@ -27,7 +27,8 @@ class CreateFormRequest extends FormRequest
             'name' => 'required',
             'phone' => 'required',
             'address'=>'required',
-            'email' => 'required'
+            'email' => 'required',
+            'content'=>'required'
 
         ];
     }
@@ -36,8 +37,9 @@ class CreateFormRequest extends FormRequest
         return [
             'name.required' => 'Vui lòng nhập tên sản phẩm !',
             'phone.required' => 'Vui lòng nhập số điện thoại !',
-            'address.required' => 'vui lòng nhập địa chỉ nhận hàng !',
-            'email.required' => 'vui lòng nhập email !'
+            'address.required' => 'Vui lòng nhập địa chỉ nhận hàng !',
+            'email.required' => 'Vui lòng nhập email !',
+            'content.required' => 'Vui lòng nhập đầy đủ cả nội dung !'
 
         ];
     }

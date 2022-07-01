@@ -22,6 +22,7 @@ class EmployeeService
                 'email' => (string) $request->input('email'),
                 'password' =>hash::make((string) $request->input('password')),
                 'address' => (string) $request->input('address'),
+                'cd'=>(string) $request->input('cd'),
                 'phone' => (string) $request->input('phone'),
                 'description' => (string) $request->input('description')
 

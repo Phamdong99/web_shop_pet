@@ -48,8 +48,7 @@ class HomeController extends Controller
     #tìm kiếm sản phẩm
     public function search(Request $request)
     {
-        $product = Product::where('name','like','%'.$request->key.'%')
-                            ->get();
+        $product = Product::where('name','like','%'.$request->key.'%')->get();
         return view('search', [
             'title'=>'Tìm kiếm',
             'products'=>$product

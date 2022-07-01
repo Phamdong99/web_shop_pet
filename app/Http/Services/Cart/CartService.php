@@ -106,14 +106,14 @@ class CartService
             DB::commit();
             #queue
             SenMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
-
-
-            Session::forget('carts');
+            /*session()->forget('carts');
+            session()->flush();*/
             return $cart_insert;
         } catch (\Exception $err) {
             DB::rollBack();
         }
         return false;
+
 
     }
 

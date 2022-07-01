@@ -29,6 +29,11 @@
             </div>
 
             <div class="form-group">
+                <label for="menu">Tổng sản phẩm</label>
+                <input type="text" class="form-control" name="price_sale" value="{{$product->qty_product}}" placeholder="Tổng sản phẩm">
+            </div>
+
+            <div class="form-group">
                 <label for="menu">Ảnh</label>
                 <div id="image_show">
                     <a href="{{$product->thumb}}">

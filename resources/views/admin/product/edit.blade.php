@@ -32,6 +32,11 @@
             </div>
 
             <div class="form-group">
+                <label for="menu">Tổng sản phẩm</label>
+                <input type="number" class="form-control" name="price_sale" value="{{$product->qty_product}}" placeholder="Tổng sản phẩm">
+            </div>
+
+            <div class="form-group">
                 <label for="menu">Ảnh</label>
                 <input type="file" class="form-control"  id="upload" value="{{ $product->thumb }}">
                 <div id="image_show">
