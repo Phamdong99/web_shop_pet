@@ -30,6 +30,10 @@
                 <input type="text" class="form-control" name="phone" value="{{ $employee->phone }}" placeholder="">
             </div>
 
+            <div class="form-group">
+                <label for="menu"> Chức danh </label>
+                <input type="text" class="form-control" name="cd" value="{{ $employee->cd }}" placeholder="">
+            </div>
 
             <div class="form-group">
                 <label for="menu">Mô tả</label>

@@ -34,7 +34,7 @@ $(document).ready(function () {
         console.log(input_product, 'input')
         console.log(max, 'max')
         if (input_product > max){
-            alert('Vuot qua ton kho');
+            alert('Vượt quá tồn kho');
             $(".num-product").val(max);
         }
     })
@@ -43,7 +43,7 @@ $(document).ready(function () {
         var max = $("#num-product").attr('data-product-max');
         var input_product = $("#num-product").val();
         if (input_product > max){
-            alert('Vuot qua ton kho');
+            alert('Vượt quá tồn kho');
             $(".num-product").val(max);
         }
     })

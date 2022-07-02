@@ -117,7 +117,7 @@
 
                                 @foreach($reviews as $key => $review)
                                     <tr>
-                                        <td class="column-0">{{ $review->product->name }}</td>
+                                        <td class="column-0">{{ $review->product->name ?? '' }}</td>
                                         <td class="column-1">{{ $review->name }}</td>
                                         <td class="column-2">{{ $review->email }}</td>
                                         <td class="column-3">{{ $review->content }}</td>

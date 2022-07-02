@@ -18,7 +18,8 @@ class Product extends Model
         'price_sale',
         'active',
         'type',
-        'thumb'
+        'thumb',
+        'qty_product'
     ];
 
     public function menu()
@@ -30,5 +31,9 @@ class Product extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class, 'product_id', 'id');
+    }
+    public function carts()
+    {
+        return $this->hasMany(CartDetail::class, 'product_id', 'id');
     }
 }

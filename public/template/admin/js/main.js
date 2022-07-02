@@ -77,7 +77,7 @@ function removeProduct(id, url)
                     {
                         Swal.fire(
                             'Error!',
-                            'Xóa không thành công. Vui lòng thử lại',
+                            result.message,
                             'error'
                         )
                     }

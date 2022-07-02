@@ -70,6 +70,7 @@
             $("#example1").DataTable({
                 "paging": true,
                 "responsive": true, "lengthChange": false, "autoWidth": false,
+                "pageLength": 50,
                 "buttons": ["copy", "excel", "pdf", "print"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             $('#example2').DataTable({

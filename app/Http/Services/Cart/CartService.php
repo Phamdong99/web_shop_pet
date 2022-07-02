@@ -90,7 +90,7 @@ class CartService
         try {
             DB::beginTransaction(); // ktra try để k bị dư dl
             $carts = Session::get('carts');
-
+            //dd($carts);
             if (is_null($carts))
                 return false;
 
@@ -101,19 +101,20 @@ class CartService
                 'email' => $request->input('email'),
                 'content' => $request->input('content')
             ]);
-
+            //dd($customer);
             $cart_insert = $this->infoProductCart($carts, $customer->id);
+
             DB::commit();
             #queue
             SenMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
             /*session()->forget('carts');
             session()->flush();*/
+            Session::forget('carts');
             return $cart_insert;
         } catch (\Exception $err) {
             DB::rollBack();
         }
         return false;
-
 
     }
 
@@ -135,12 +136,19 @@ class CartService
 
             $total += $price * $item;
 
+            $qty_pro = $product->qty_product - $item;
+
             // insert cart details
             $cart->cart_details()->create([
                 'qty' => $item,
                 'price' => $price,
                 'product_id' => $product->id,
                 'cart_id' => $cart->id
+            ]);
+            //update số lượng
+
+            $cart->cart_details[0]->products->update([
+                'qty_product' => $qty_pro
             ]);
         }
 
@@ -154,8 +162,7 @@ class CartService
 
     public function getDetailsProduct($id)
     {
-        return Product::select('id', 'name', 'price', 'price_sale', 'thumb')
-            ->where(['id' => $id, 'active' => 1])
+        return Product::where(['id' => $id, 'active' => 1])
             ->first();
     }
 

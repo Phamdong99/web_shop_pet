@@ -95,7 +95,6 @@ class ProductService
         if (empty($patch_file)) {
             $patch_file = $product->thumb;
         }
-
         $product->name = (string)$request->input('name');
         $product->description = (string)$request->input('description');
         $product->content = (string)$request->input('content');
@@ -106,20 +105,24 @@ class ProductService
         $product->qty_product = (int)$request->input('qty_product');
         $product->save();
 
-        Session::flash('success', 'Sửa danh mục thành công');
+        Session::flash('success', 'Sửa sản phẩm thành công');
         return true;
     }
 
     public function destroy($request)
     {
         $id = (int)$request->input('id');
-        $product = Product::where('id', $id)->first();
+        $product = Product::where('id', $id)->orWhere('menu_id', $id)->first();
+
 
         if ($product) {
-            return Product::where('id', $id)->orWhere('menu_id', $id)->delete();
+            if(count($product->carts) > 0){
+                return 0;
+            }
+            $product->delete();
+            return 1;
         }
-
-        return false;
+        return 2;
     }
 
     public function fileUpload($request)

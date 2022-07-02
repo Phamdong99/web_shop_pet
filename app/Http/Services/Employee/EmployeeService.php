@@ -47,6 +47,7 @@ class EmployeeService
         $employee->password = hash::make((string) $request->input('password'));
         $employee->address = (string) $request->input('address');
         $employee->phone =(string) $request->input('phone');
+        $employee->cd =(string) $request->input('cd');
         $employee->description = (string) $request->input('description');
         $employee->save();
 

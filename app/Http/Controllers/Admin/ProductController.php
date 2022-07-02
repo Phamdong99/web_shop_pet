@@ -64,14 +64,22 @@ class ProductController extends Controller
     public function destroy(Request $request)
     {
         $result = $this->productService->destroy($request);
-        if($result){
+
+        if($result == 1){
             return response()->json([
                 'error' => false,
                 'message' => 'Xóa sản phẩm thành công'
             ]);
+        }elseif ($result == 0){
+            return response()->json([
+                'error' => true,
+                'message' => 'San pham da co don hang'
+            ]);
+        }else{
+            return response()->json([
+                'error' => true,
+                'message' => 'Xóa sản phẩm khong thành công'
+            ]);
         }
-        return response()->json([
-            'error' => true
-        ]);
     }
 }

@@ -37,7 +37,7 @@
                         if ($secureHash == $vnp_SecureHash) {
                             if ($_GET['vnp_ResponseCode'] == '00') {
                                 echo "<span style='color:blue'>Thanh toán thành công. Cảm ơn quý khách đã sử dụng dịch vụ</span>";
-
+                                Session::flush();
                             } else {
                                 echo "<span style='color:red'>Thanh toán không thành công</span>";
                             }

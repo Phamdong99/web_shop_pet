@@ -117,6 +117,7 @@ class CartController extends Controller
             , 'data' => $vnp_Url);
 
             if (isset($_POST['redirect'])) {
+//                dd(Session::get('carts'));
                 header('Location: ' . $vnp_Url);
                 die();
             } else {
@@ -130,13 +131,6 @@ class CartController extends Controller
     {
         return view('carts.view_cart', [
             'title'=>'Đặt hàng',
-
-        ]);
-    }
-    public function view_history()
-    {
-        return view('carts.history_cart', [
-            'title'=>'Lịch sử đặt hàng',
 
         ]);
     }

@@ -30,7 +30,7 @@
 
             <div class="form-group">
                 <label for="menu">Tổng sản phẩm</label>
-                <input type="text" class="form-control" name="price_sale" value="{{$product->qty_product}}" placeholder="Tổng sản phẩm">
+                <input type="text" class="form-control" name="qty_product" value="{{$product->qty_product}}" placeholder="Tổng sản phẩm">
             </div>
 
             <div class="form-group">

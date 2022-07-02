@@ -15,10 +15,6 @@ class Cart extends Model
         'active'
     ];
 
-    public function product()
-    {
-        return $this->hasOne(Product::class, 'id', 'product_id');
-    }
 
     public function cart_details()
     {

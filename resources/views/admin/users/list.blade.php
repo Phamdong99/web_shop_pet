@@ -14,7 +14,7 @@
             <th>Tên</th>
             <th>Email</th>
             <th>Địa chỉ</th>
-            <td>Chức danh</td>
+            <th>Chức danh</th>
             <th>Cập nhật</th>
             <th style="width: 150px">Thực hiện</th>
         </tr>

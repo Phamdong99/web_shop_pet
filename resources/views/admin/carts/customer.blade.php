@@ -58,8 +58,11 @@
         $(function () {
             $("#example1").DataTable({
                 "paging": true,
-                "responsive": true, "lengthChange": false, "autoWidth": false,
-                "buttons": ["copy", "excel", "pdf", "print"]
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "excel", "pdf", "print"],
+                "pageLength": 50
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             $('#example2').DataTable({
                 "paging": true,
