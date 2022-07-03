@@ -73,12 +73,12 @@ class ProductController extends Controller
         }elseif ($result == 0){
             return response()->json([
                 'error' => true,
-                'message' => 'San pham da co don hang'
+                'message' => 'Sản phẩm đã tồn tại trong một đơn hàng và bạn không thể xoá sản phẩm này'
             ]);
         }else{
             return response()->json([
                 'error' => true,
-                'message' => 'Xóa sản phẩm khong thành công'
+                'message' => 'Xóa sản phẩm không thành công'
             ]);
         }
     }

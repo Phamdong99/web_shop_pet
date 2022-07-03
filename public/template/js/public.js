@@ -28,23 +28,21 @@ function loadMore()
 
 $(document).ready(function () {
 
-    $("#num-product").on('change', function (e) {
-        var max = $("#num-product").attr('data-product-max');
-        var input_product = $("#num-product").val();
-        console.log(input_product, 'input')
-        console.log(max, 'max')
-        if (input_product > max){
+    $(".num-product").on('change', function (e) {
+        var max = $(this).attr('data-product-max');
+        var input_product = e.target.value;
+        if (parseInt(input_product) > parseInt(max)){
             alert('Vượt quá tồn kho');
-            $(".num-product").val(max);
+            $(this).val(max);
         }
     })
 
     $(".btn-num-product-up").on('click', function (e){
-        var max = $("#num-product").attr('data-product-max');
-        var input_product = $("#num-product").val();
-        if (input_product > max){
+        var max = $(this).parent().find("input").attr('data-product-max');
+        var input_product = $(this).parent().find("input").val();
+        if (parseInt(input_product) > parseInt(max)){
             alert('Vượt quá tồn kho');
-            $(".num-product").val(max);
+            $(this).parent().find("input").val(max);
         }
     })
 })

@@ -49,8 +49,7 @@ function removeProduct(id, url)
 {
     Swal.fire({
         title: 'Are you sure?',
-        text: "Nếu sản phẩm đã có trong đơn hàng, việc xoá sản phẩm nghĩa là xoá đơn hàng." +
-            "Bạn có chắc chắn muốn xoá mục này không ?",
+        text: "Bạn có chắc chắn muốn xoá mục này không ? Bạn sẽ không thể xoá được các sản phẩm khi đã nằm trong đơn hàng",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
